@@ -15,8 +15,8 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 		<meta name="apple-mobile-web-app-title" content="Grama Forte comércio de gramas">
 		
-		<link rel="stylesheet" href="..\node_modules\material-design-lite\material.min.css">
-    	<link rel="stylesheet" href="..\node_modules\material-design-lite\styles.css">
+		<link rel="stylesheet" href="..\..\node_modules\material-design-lite\material.min.css">
+    	<link rel="stylesheet" href="..\..\node_modules\material-design-lite\styles.css">
 		
 		<style>
 			#view-source {
@@ -37,17 +37,14 @@
 				display: inline;
 			}
 
+			body {
+				  background-image: url('../../images/grama/esmeralda.jpg');
+				  background-size: cover;
+				  background-attachment: fixed;
+				  /* FIXME: Temp. workaround for vertical scrollbars */
+				  margin: 0;
+				}
 
-
-			 demo-card-wide.mdl-card {
-			    width: 512px;
-
-			  }
-			  .demo-card-wide > .mdl-card__title {
-			    color: #fff;
-			    height: 176px;
-			    background: url('../images/gramas/esmeralda.jpg') center / cover;
-			  }
 		</style>
 	</head>
 	<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
@@ -67,18 +64,9 @@
 			</header>
 		</div>
 
-<div class="mdl-card mdl-shadow--2dp demo-card-wide">
-  <div class="mdl-card__title">
-    <h1 class="mdl-card__title-text">Grama Esmeralda</h1>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Com origem japonesa, foi no Brasil que a grama esmeralda ganhou grande destaque e se tornou a variedade de maior sucesso em vendas...
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a href="grama/esmeralda.html" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" data-tipograma="esmeralda">
-      Mais informações
-    </a>
-  </div>
-</div>
+		<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+     		<main class="mdl-layout__content">
+     		</main>
+     	</div>
 	</body>
 </html>

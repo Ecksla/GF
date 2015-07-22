@@ -9,10 +9,20 @@
 		<meta name="description" content="Projetos e execução de jardinagem, venda e colocação de gramas esmeralda, sempre verde, coreana, grama 				preta, barro adubado e adubo.">		
 		<meta name="title" content="Grama Forte">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			input[type="text"], input[type="email"], input[type="tel"], textarea 
+			{ 
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			input[type="submit"]
+			{ 
+				float: right;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="page-wrapper">
-
 			<!-- Header -->
 				<div id="header-wrapper">
 					<header id="header" class="container">
@@ -47,20 +57,19 @@
 											<h2>Fale Conosco</h2>
 											<h3>Utilize o formulário abaixo para mandar sua mensagem. Será um prazer atendê-lo!</h3>
 										</header>
-										<div class="row">
-											<input id="nome" type="input" placeholder="Nome" />
-										</div>
-										<div class="row">
-										<input id="email" type="email" placeholder="E-mail" />
-										</div>
-										<input id="telefone" type="tel" placeholder="Telefone" />
-										<textarea  id="mensagem" rows="4" placeholder="Mensagem"></textarea>
-										<input id="enviar" type="submit" value="Enviar" />
-										<p>
-											Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-											Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet mollis
-											justo facilisis quis. Sed sagittis mauris amet tellus gravida lorem ipsum.
-										</p>
+										<form method="post">
+											<div  class="11u 12u(mobile)">
+												<input id="nome" type="text" placeholder="Nome" required />
+												<br>
+												<input id="email" type="email" placeholder="E-mail" required />
+												<br>
+												<input id="telefone" type="tel" placeholder="Telefone" />
+												<br>
+												<textarea id="mensagem" rows="4" placeholder="Mensagem" required></textarea>
+												<br>
+												<input id="enviar" type="submit" value="Enviar" />
+											</div>
+										</form>
 									</section>
 								</div>		
 								<div class="4u 12u(mobile)">
@@ -68,11 +77,17 @@
 										<header>
 											<h2>Contate Grama Forte</h2>
 										</header>
-										Telefone: (47) 3334-3302
-										Celular: (47) 9110-6420
-										Email: name@example.com
-										R. Erwin Glau, 310 - Itoupavazinha Blumenau - SC 
-										89066-660
+										<p>
+											Telefone: <b>(47) 3334-3302</b>
+											<br>
+											Celular: (47) 9110-6420
+											<br>
+											Email: name@example.com
+											<br>
+											R. Erwin Glau, 310 - Itoupavazinha Blumenau - SC
+											<br>
+											89066-660
+										</p>
 									</section>
 								</div>
 							</div>

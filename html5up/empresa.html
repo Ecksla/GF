@@ -12,7 +12,18 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<link rel="stylesheet" href="assets/css/estilo.css" />
+		<link rel="stylesheet" href="assets/css/estilo.css" />		
+		
+		<script src="assets/js/jquery.min.js"></script>
+		
+		<!-- Magnific Popup core CSS file -->
+		<link rel="stylesheet" href="assets/magnific-popup/magnific-popup.css">
+		<link rel="stylesheet" href="assets/css/jquery.bxslider.css"  />
+		
+		<!-- Magnific Popup core JS file -->
+		<script src="assets/magnific-popup/jquery.magnific-popup.js"></script>
+		<script src="assets/js/jquery.bxslider.min.js"></script>
+		
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -46,7 +57,7 @@
 									<!-- Sidebar -->
 									<section>
 										<header>
-											<a href="../gramas.html">
+											<a href="gramas.html">
 												<h2>Gramas</h2>
 											</a>
 										</header>
@@ -74,6 +85,93 @@
 										<div class="row">
 											<h2>Cases de Sucesso</h2>
 										</div>
+										<div class="row bxslider galeria-cases">
+												<div>
+													<a href="images/cases/jardim01.jpg">
+														<img src="images/cases/jardim01.jpg" alt="" class="teste" />
+													</a>
+												</div>	
+												<div>
+													<a href="images/cases/jardim02.jpg" >
+														<img src="images/cases/jardim02.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim03.jpg">
+														<img src="images/cases/jardim03.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim04.jpg">
+														<img src="images/cases/jardim04.jpg" alt="" />
+													</a>
+												</div>
+												<div class="3u 6u(tablet) 12u(mobile)">
+													<a href="images/cases/jardim05.jpg">
+														<img src="images/cases/jardim05.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+														<a href="images/cases/jardim06.jpg">
+														<img src="images/cases/jardim06.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim07.jpg">
+														<img src="images/cases/jardim07.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim08.jpg">
+														<img src="images/cases/jardim08.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim09.jpg">
+														<img src="images/cases/jardim09.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim10.jpg">
+														<img src="images/cases/jardim10.jpg" alt="" />
+													</a>
+												</div>
+												<div class="3u 6u(tablet) 12u(mobile)">
+													<a href="images/cases/jardim11.jpg">
+														<img src="images/cases/jardim11.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim12.jpg">
+														<img src="images/cases/jardim12.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim13.jpg">
+														<img src="images/cases/jardim13.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim14.jpg">
+														<img src="images/cases/jardim14.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim15.jpg">
+														<img src="images/cases/jardim15.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim16.jpg">
+														<img src="images/cases/jardim16.jpg" alt="" />
+													</a>
+												</div>
+												<div>
+													<a href="images/cases/jardim17.jpg">
+														<img src="images/cases/jardim17.jpg" alt="" />
+													</a>
+												</div>
+											</div>
 									</section>
 								</div>
 							</div>
@@ -155,12 +253,30 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/skel-viewport.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		
+		<script type="application/javascript">
+			$(document).ready(function(){
+			  $('.bxslider').bxSlider({
+			  	auto: true,
+				slideWidth: 200,
+				minSlides: 2,
+				maxSlides: 4,
+				slideMargin: 5,
+			  	adaptiveHeight: true
+			  });
+			});
+			
+			$('.galeria-cases').magnificPopup({
+			  delegate: 'a', // child items selector, by clicking on it popup will open
+			  type: 'image',
+			  gallery:{enabled:true}
+			  // other options
+			});
+		</script>	
 	</body>
 </html>

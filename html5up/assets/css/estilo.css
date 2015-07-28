@@ -10,10 +10,25 @@ img.wrap
 	float: right;
 }
 
+feature-image2 img
+{
+	max-width: 200px;
+}
+
+teste
+{
+	max-width: 200px;
+}
+
 @media screen and (min-width: 737px) {
 	img.wrap 
 	{
 		width: 40%;
+	}
+	
+	feature-image2 img	
+	{
+		max-width: 200px !important;
 	}
 }
 
@@ -21,5 +36,10 @@ img.wrap
 	img.wrap 
 	{
 		width: 100%;
+	}
+	
+	feature-image img
+	{
+		max-width: 200px;
 	}
 }

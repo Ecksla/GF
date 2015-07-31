@@ -1,8 +1,8 @@
 <?php
 	$headers = "MIME-Version: 1.1\r\n";
 	$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
-	$headers .= "From: "+ $_POST["nome"] + "\r\n"; // remetente
-	$headers .= "Return-Path: "+ $_POST["nome"] + "\r\n"; // return-path
+	$headers .= "From: contato@gramaforte.com.br\r\n"; // remetente
+	$headers .= "Return-Path: contato@gramaforte.com.br\r\n"; // return-path
 
 	$conteudo = "Nome\r\n" + $_POST["nome"];
 	$conteudo = "\r\n\r\nTelefone" + $_POST["telefone"];

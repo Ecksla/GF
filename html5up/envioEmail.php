@@ -2,13 +2,13 @@
 	$headers = "MIME-Version: 1.1\r\n";
 	$headers .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 	$headers .= "From: contato@gramaforte.com.br\r\n"; // remetente
-	$headers .= "Return-Path: contato@gramaforte.com.br\r\n"; // return-path
+	$headers .= "Return-Path: " . strip_tags($_POST["email"]) . "\r\n"; // return-path
 
-	$conteudo = "Nome\r\n" + $_POST["nome"];
-	$conteudo = "\r\n\r\nTelefone" + $_POST["telefone"];
-	$conteudo = "\r\n\r\n" + $_POST["mensagem"];
+	$conteudo = "Nome" . htmlentities($_POST["nome"]);
+	$conteudo .= "Telefone" . htmlentities($_POST["telefone"]);
+	$conteudo .= htmlentities($_POST["mensagem"]);
 
-	$envio = mail("henriquebertoldi10@gmail.com", "Assunto", $conteudo, $headers);
+	$envio = mail("henriquebertoldi10@gmail.com", htmlentities($_POST["assunto"]), $conteudo, $headers);
  
 	if($envio)
  		echo "Mensagem enviada com sucesso";

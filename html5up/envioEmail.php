@@ -1,4 +1,5 @@
 <?php
+	header('Content-type: application/json');
 
 	$headers = "MIME-Version: 1.1\r\n";
 	$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
@@ -11,10 +12,10 @@
 	$conteudo .= $_POST["mensagem"];
 	$conteudo .= "</body></html>";
 
-	$envio = mail("henriquebertoldi10@gmail.com", htmlentities($_POST["assunto"]), $conteudo, $headers);
+	$envio = mail("contato@gramaforte.com.br", htmlentities($_POST["assunto"]), $conteudo, $headers);
  
 	if($envio)
- 		echo json_encode(array('enviouEmail' => true));
+ 		echo '{"enviouEmail": true}';
 	else
- 		echo json_encode(array('enviouEmail' => false));
+ 		echo '{"enviouEmail": false}';
 ?>

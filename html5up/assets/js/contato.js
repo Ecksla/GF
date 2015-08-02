@@ -1,5 +1,5 @@
 $(function() {
-	//atribuirEventos();
+	atribuirEventos();
 });
 
 function atribuirEventos()
@@ -11,7 +11,7 @@ function enviarEmail()
 {
 	if ($('#form').validate())
 	{
-		$.post('http://localhost/gramaforte/envioEmail.php', $('#form').serialize(), function(data )
+		$.post('envioEmail.php', $('#form').serialize(), function(data )
 		{
 			if (data.enviouEmail)
 			{

@@ -1,4 +1,5 @@
 <?php
+
 	$headers = "MIME-Version: 1.1\r\n";
 	$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 	$headers .= "From: contato@gramaforte.com.br\r\n"; // remetente
@@ -13,7 +14,7 @@
 	$envio = mail("henriquebertoldi10@gmail.com", htmlentities($_POST["assunto"]), $conteudo, $headers);
  
 	if($envio)
- 		echo "Mensagem enviada com sucesso";
+ 		echo json_encode(array('enviouEmail' => true));
 	else
- 		echo "A mensagem não pode ser enviada";
+ 		echo json_encode(array('enviouEmail' => false));
 ?>

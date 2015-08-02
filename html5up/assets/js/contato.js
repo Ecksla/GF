@@ -9,29 +9,23 @@ function atribuirEventos()
 
 function enviarEmail()
 {
-	if (validarForm())
+	if ($('#form').validate())
 	{
-		$.post('envioEmail.php', $('#form').serialize(), function()
+		$.post('http://localhost/gramaforte/envioEmail.php', $('#form').serialize(), function(data )
 		{
-  			alert('sucesso');
+			if (data.enviouEmail)
+			{
+				$("#divEnvioEmail").hide();
+				$("#divRetornoEmail").show();
+			}
+			else
+			{
+				alert("Ocorreu um erro ao tentar enviar o e-mail, reveja se os dados estão correto e tente novamente!");
+			}
   		}).fail(function()
   		{
-  			alert('falha');
+  			alert('Ocorreu um erro ao tentar conectar com o servidor, por favor tente novamente mais tarde!');
+  			window.location.href = "index.html";
   		});
 	}
-}
-
-function validarForm()
-{
-	var tudoCerto = true;
-
-	$('#form').each(function(indice, form)
-	{
-		if (!form[indice].checkValidity())
-		{
-			tudoCerto = false;
-		}
-	});
-
-	return tudoCerto;
 }

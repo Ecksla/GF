@@ -1,5 +1,5 @@
 $(function() {
-	atribuirEventos();
+	//atribuirEventos();
 });
 
 function atribuirEventos()

@@ -15,7 +15,6 @@
 				height: 350px;
 			}
 		</style>
-		<script src="https://maps.googleapis.com/maps/api/js"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/estilo.css" />
 	</head>
@@ -98,8 +97,7 @@
 										<header>
 											<h2>Onde estamos</h2>
 										</header>
-										<div id="map-canvas">
-										</div>
+										<iframe style="width: 100%; min-height: 350px;" frameborder="0" style="border:0" 			src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJl4GMix0e35QRujZXAIxmoaA&key=AIzaSyDn7kaXUVtYHlAih9pIwCWUv8EFUUZ6fmo" allowfullscreen></iframe>
 									</section>
 								</div>
 							</div>
@@ -174,18 +172,6 @@
 
 			  ga('create', 'UA-65854061-1', 'auto');
 			  ga('send', 'pageview');
-			
-			function initialize() {
-				var mapCanvas = document.getElementById('map-canvas');
-				var mapOptions = {
-					center: new google.maps.LatLng(-26.839788, -49.107755, true),
-					zoom: 17,
-					mapTypeId: google.maps.MapTypeId.ROADMAP
-				}
-				var map = new google.maps.Map(mapCanvas, mapOptions);			  
-			}
-			
-			google.maps.event.addDomListener(window, 'load', initialize);
 		</script>
 	</body>
 </html>

@@ -11,8 +11,10 @@ function enviarEmail()
 {
 	if ($('#form').valid())
 	{
-		$.post('envioEmail.php', $('#form').serialize(), function(data )
+		$.post('envioEmail.php', $('#form').serialize(), function(data)
 		{
+			var data = $.parseJSON(data);
+
 			if (data.enviouEmail)
 			{
 				$("#divEnvioEmail").hide();

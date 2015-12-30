@@ -584,4 +584,10 @@
 
 	};
 
+	//altera mensagens do validador
+	$.extend($.validator.messages, {
+	    required: "Este campo é obrigatório",
+	    email: "Entre com um e-mail válido"
+	});
+
 })(jQuery);

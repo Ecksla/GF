@@ -1,21 +1,41 @@
 <?php
-	header('Content-type: application/json');
 
-	$headers = "MIME-Version: 1.1\r\n";
-	$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-	$headers .= "From: contato@gramaforte.com.br\r\n"; // remetente
-	$headers .= "Return-Path: " . strip_tags($_POST["email"]) . "\r\n"; // return-path
-
-	$conteudo = "<html><body>";
-	$conteudo .= "Nome<br><b> " . htmlentities($_POST["nome"]) . "</b><br><br>";
-	$conteudo .= "Telefone<br><b> " . htmlentities($_POST["telefone"]) . "</b><br><br>";
-	$conteudo .= $_POST["mensagem"];
-	$conteudo .= "</body></html>";
-
-	$envio = mail("contato@gramaforte.com.br", htmlentities($_POST["assunto"]), $conteudo, $headers);
+	function pegaValor($valor) {
+    	return isset($_POST[$valor]) ? $_POST[$valor] : '';
+	}	
  
-	if($envio)
- 		echo '{"enviouEmail": true}';
-	else
- 		echo '{"enviouEmail": false}';
+	function validaEmail($email) {
+    	return filter_var($email, FILTER_VALIDATE_EMAIL);
+	}
+ 
+	function enviaEmail($de, $assunto, $mensagem, $para, $email_servidor) {
+    	$headers = "From: $email_servidor\r\n" .
+               		"Reply-To: $de\r\n" .
+               		"Return-Path: $de\r\n" .
+               		"X-Mailer: PHP/" . phpversion() . "\r\n";
+   		$headers .= "MIME-Version: 1.0\r\n";
+    	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+  
+  		mail($para, $assunto, nl2br($mensagem), $headers);
+	}
+ 
+	$email_servidor = "contato@gramaforte.com.br";
+	$para = "contato@gramaforte.com.br";
+	$de = pegaValor("email");
+	$assunto = pegaValor("assunto");
+	$nome = pegaValor("nome");
+
+	$mensagem = "<html><body>";
+	$mensagem .= "Nome<br><b> " . pegaValor("nome") . "</b><br><br>";
+	$mensagem .= "Telefone<br><b> " . pegaValor("telefone") . "</b><br><br>";
+	$mensagem .= pegaValor("mensagem");
+	$mensagem .= "</body></html>";
+
+	
+	if ($nome && validaEmail($de) && $mensagem) {
+	    enviaEmail($de, $assunto, $mensagem, $para, $email_servidor);
+	    echo '{"enviouEmail": true}';
+	} else {
+	    echo '{"enviouEmail": false}';
+	}
 ?>

@@ -9,7 +9,7 @@ function atribuirEventos()
 
 function enviarEmail()
 {
-	if ($('#form').validate())
+	if ($('#form').valid())
 	{
 		$.post('envioEmail.php', $('#form').serialize(), function(data )
 		{

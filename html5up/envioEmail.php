@@ -16,19 +16,21 @@
    		$headers .= "MIME-Version: 1.0\r\n";
     	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
   
-  		mail($para, $assunto, nl2br($mensagem), $headers);
+  		mail($para, '[CONTATO SITE] ' . (empty($assunto) ? 'Assunto não informado' : $assunto), nl2br($mensagem), $headers);
 	}
  
-	$email_servidor = "contato@gramaforte.com.br";
-	$para = "contato@gramaforte.com.br";
+	$email_servidor = "Contato Grama Forte <contato@gramaforte.com.br>";
+	$para = "gramaforte@gmail.com";
 	$de = pegaValor("email");
 	$assunto = pegaValor("assunto");
 	$nome = pegaValor("nome");
 
 	$mensagem = "<html><body>";
-	$mensagem .= "Nome<br><b> " . pegaValor("nome") . "</b><br><br>";
-	$mensagem .= "Telefone<br><b> " . pegaValor("telefone") . "</b><br><br>";
-	$mensagem .= pegaValor("mensagem");
+  $mensagem .= "Nova mensagem vinda do site!<br><br>";
+	$mensagem .= "<b>Nome:</b> " . pegaValor("nome") . "<br><br>";
+  $mensagem .= "<b>Email:</b> " . $de . "<br><br>";
+	$mensagem .= "<b>Telefone:</b> " . pegaValor("telefone") . "<br><br>";
+	$mensagem .= "<b>Mensagem:</b> " . pegaValor("mensagem");
 	$mensagem .= "</body></html>";
 
 	

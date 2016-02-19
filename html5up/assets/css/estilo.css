@@ -48,3 +48,11 @@ teste
 		max-width: 200px;
 	}
 }
+.bx-next
+{
+	z-index: 10 !important;
+}
+.bx-prev
+{
+	z-index: 10 !important;
+}
